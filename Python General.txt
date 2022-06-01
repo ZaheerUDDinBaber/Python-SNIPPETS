@@ -1,0 +1,187 @@
+import random 
+
+name = "zaheer"
+print(name) 
+#---------------
+# Python program showing
+# a use of input()
+val = input("Enter your value: ")
+print(val)
+#---------------
+#indentation matters
+if 5 > 2:
+ print("Five is greater than two!")
+#---------------
+# casting
+x = str(3)    # x will be '3'
+y = int(3.04)    # y will be 3
+z = float(3)  # z will be 3.0
+print(type(x))
+
+x = 5
+y = "2"
+print(x + int(y))
+ 
+x = None #none type
+z = 1j   # complex
+#---------------
+# Assign array to variables
+fruits = ["apple", "banana", "cherry"]
+x, y, z = fruits
+print(x)
+print(y)
+print(z)
+#---------------
+
+"""
+This is a comment
+written in
+more than just one line
+"""
+#---------------
+x = "awesome"
+
+def myfunc():
+  x = "fantastic"
+  print("Python is " + x)
+
+myfunc()
+print("Python is " + x)
+
+#--------------------
+#Global  variables
+def nameUpdate(changeName):
+   global name
+   name = changeName
+   
+nameUpdate("ali")
+print(name)
+name = None
+print(name)
+
+#---------------
+x = ["apple", "banana", "cherry" , "charry"] #list-allows duplicate value
+x = ("apple", "banana", "cherry") #tuple, once initiated, cannot be changed 
+x = {"apple", "banana", "cherry"} #set, dont allow duplicate values
+x = {"name" : "John", "age" : 36} #dict
+
+mylist = ['2','1','45','3','b','d','a']
+mylist.sort()
+print(len(mylist))
+myList = ['2','1', '1', '45','3','b','d','a','45','b']
+myList.append('d')
+myList.insert(0,"z")
+myList.sort()
+print(len(myList))
+print(myList)
+
+thislist = ["apple", "banana", "cherry"]
+if "apple" in thislist:
+  print("Yes, 'apple' is in the fruits list")
+ 
+thislist = ["apple", "banana", "cherry"]
+thislist[1] = "blackcurrant"
+print(thislist)
+
+
+#-----------------------------
+# remove duplication
+mySet = {'2','1', '1', '45','3','b','d','a','45','b'}
+print(mySet)
+
+set1 = {"a", "b" , "c", 2}
+set2 = {1, 2, 3}
+set3 = set1.union(set2)
+print(set3)
+#-----------------------------
+# order of initialization and values remain same, no append
+myTuple = ("banana", "apple", "cherry")
+print(myTuple)
+#-----------------------------
+# key value pair, same as Json
+myDict = {"name" : "John", "lastname" :"Sena", "age" : 36, "subDict" : {"city": "Lahore", "phone" : "+923350128489"}} #dict
+myDict.pop("lastname")
+myDict.update({"age": 27})
+print(myDict["name"])
+print(myDict["age"])
+print(myDict["subDict"])
+print(myDict["subDict"]["phone"])
+# Getting keys of dict
+keys = myDict.keys()
+print(keys)
+#---------------
+a = "Hello, World!"
+print(a[1])
+#---------------
+a = "Hello, World!"
+print(len(a))
+#---------------
+txt = "The best things in life are free!"
+print("freee" in txt)
+    
+txt = "The best things in life are free!"
+if "free" in txt:
+   print("Yes, 'free' is present.")
+  
+txt = "The best things in life are free!"
+print("expensive" not in txt)
+
+
+b = "Hello, World!"
+print(b[2:5])
+
+b = "Hello, World!"
+print(b[:5])
+
+b = "Hello, World!"
+print(b[2:])
+
+txt = "The best Things in Life are free!"
+print(txt.upper())
+print(txt.lower())
+
+a = "    Hello, World!    "
+print(a.strip()) # returns "Hello, World! remove whitespaces from start and enf" 
+
+a = "Hello, World!"
+print(a.replace("Hello", "hell"))
+
+a = "31304-1311103-1"
+print(a.replace("-", ""))
+
+
+a = "Hello, World!"
+print(a.split(",")) # returns ['Hello', ' World!']
+
+txt = "We are the so-called \"Vikings\" from the north."
+print(txt) 
+
+txt = "my name is \"zaheer\" and i am student"
+print(txt.endswith("student")) 
+
+txt = "my name is {name} and i am a {profession}".format(name = "Zaheer",  profession= "software eng") 
+print(txt)
+
+for x in "banana":
+  print(x) 
+  
+#---- python functions can return morethan one parameters once
+def fun():
+        Name = 'TechVidvan'
+        X = 6
+        return Name, X;
+    
+Name, x = fun()
+print(Name)
+print(x)
+#---------------
+# lamda functions, where x is a function name, and a is parameter of it
+x = lambda a: a + 100
+print(x(5))
+# lamda functions, where x is a function name, and a,b,c is parameter of it
+x = lambda a, b, c : a + b + c
+print(x(5, 6, 2))
+#---------------------
+break # to break a line
+exit() # to exit from code
+print(random.randrange(1, 10)) # to generate numbers

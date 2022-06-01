@@ -1,0 +1,140 @@
+# object oriented programming in python
+#------------------------------------------
+# class with no defination
+class Person:
+  pass
+#------------------------------------------  
+# Creating variables private or protected
+class PrivateProtectedClass:
+    def __init__(self):
+        self._a = 2 # Protected member
+        self.__b = 2 # Private member
+#------------------------------------------ 
+# defination of a class
+class PersonClass:
+   # variables/data menbers
+   name = ""
+   age = ""
+   
+   #constructor
+   def __init__(self, name, age):
+      self.name = name
+      self.age = age
+   def __del__(self):
+      print("Destructor called")
+
+   #methods and seters/getters inside a class   
+   def setAge(self, updateAge):
+    self.age = updateAge
+    
+   def setName(self, updateName):
+    self.name = updateName
+    
+   def getName(self):
+    return self.name
+    
+   def getAge(self):
+    return self.age
+
+#------------------------------------------
+
+# 'self' can be changed into custom name
+class Person:
+  def __init__(my_custom_object_name, name, age):
+    my_custom_object_name.name = name
+    my_custom_object_name.age = age
+    
+  def my_custom_method(abc):
+    print("Hello my name is " + abc.name)
+
+# inheritence in python
+class Employe(PersonClass):
+  empID =""
+  empJD =""
+   
+  def __init__(self, empID, empJD):
+    self.empID = empID
+    self.empJD = empJD
+    super().__init__("","")    
+    
+   #methods and seters/getters inside a class   
+  def setEmpID(self, updateID):
+    self.empID = updateID
+    
+  def setEmpJD(self, updateJD):
+    self.empJD = updateJD
+    
+  def getID(self):
+    return self.empID
+    
+  def getJD(self):
+    return self.empJD  
+    
+# python support multiple and multilevel inheritance
+# Base class1
+class Mother:
+	mothername = ""
+	def mother(self):
+		print(self.mothername)
+# Base class2
+class Father:
+	fathername = ""
+	def father(self):
+		print(self.fathername)
+# inherited class
+class Son(Mother, Father):
+	def parents(self):
+		print("Father :", self.fathername)
+		print("Mother :", self.mothername)
+        
+#--------------------------------
+# Python support Hierarchical inheritance
+
+# Base class
+class Parent:
+	def parentfun(self):
+		print("This function is in parent class.")
+# Derived class1
+class Child1(Parent):
+	def childfun1(self):
+		print("This function is in child 1.")
+# Derivied class2
+class Child2(Parent):
+	def childfun2(self):
+		print("This function is in child 2.")
+  
+#--------------------------------
+#object initialization   
+classObject = PersonClass("Zaheer UD Din Baber", 27)
+classObject.setAge(30)    
+print(classObject.getName())
+print("age : "+ str(classObject.getAge()))
+myobject = Person("Zaheer", 36)
+myobject.my_custom_method()
+print("--------------------")
+# inherited class object initialization
+empObj = Employe("","")
+empObj.setName("Jasica")
+empObj.setAge("26")
+empObj.setEmpID("J43GR")
+empObj.setEmpJD("Support Engineer")
+print(empObj.getName())
+print(empObj.getAge()) 
+print(empObj.getID())
+print(empObj.getJD())
+print("--------------------")
+# multiple inheritence initialization
+s1 = Son()
+s1.fathername = "RAM"
+s1.mothername = "SITA"
+s1.parents()
+print("--------------------")
+# Hierarchical inheritence initialization
+object1 = Child1()
+object2 = Child2()
+
+object1.parentfun()
+object1.childfun1()
+
+object2.parentfun()
+object2.childfun2()
